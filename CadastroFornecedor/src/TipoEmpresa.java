@@ -1,5 +1,5 @@
 public enum TipoEmpresa {
-    FILIAL,
-    MATRIZ;
+    
+    FILIAL, MATRIZ;
 
 }

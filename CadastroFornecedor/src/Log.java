@@ -1,6 +1,7 @@
 public class Log {
-    private long dataHora;
 
+    private long dataHora;
+    
     public void registrarTransacao (Usuario usuario, Fornecedor fornecedor){
         
     }

@@ -1,6 +1,5 @@
 public enum Status {
-    ATIVO,
-    RASCUNHO,
-    INATIVO;
+
+    ATIVO, RASCUNHO, INATIVO;
     
 }

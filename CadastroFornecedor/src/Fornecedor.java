@@ -1,5 +1,7 @@
+import java.util.Collection;
 
 public class Fornecedor {
+    
     private boolean isRascunho;
     private int id;
     private String email;
@@ -9,6 +11,19 @@ public class Fornecedor {
     private long dtCadastro;
     private String rzSocial;
     private String nmFantasia;
+
+    private Endereco endereco;
+    private Status status;
+
+    private Collection<TipoFornecimento> tipoFornecimento;
+    private Collection<Cnae> codigosCnae;
+    private Collection<Contato> contatos;
+    private Collection<Telefone> telefones;
+    private Collection<Produto> produtos;
+    private Collection<Servico> servicos;
+    private Collection<Os> OsRegistradas;
+    private Collection<Empresa> empresas;
+
 
     public void salvar(){
 
