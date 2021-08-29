@@ -19,7 +19,7 @@
 .records th:last-child,
 .records td:last-child{
     padding: 0;
-    min-width: 140px;
+    min-width: 22px;
     text-align: center;
 }
 
