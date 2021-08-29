@@ -5,14 +5,14 @@
 }
 
 :root{
-    --primary-color: #383838;
+    --primary-color: #FFBA00;
     --secundary-color: #FFF1CC;
     --shadow-color: #CCC;
     --text-color: #FFF;
 }
 
 body{
-    background-color: rgb(197, 195, 195);
+    background-color: rgb(161, 159, 159);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
