@@ -10,21 +10,53 @@
 }
 
 .button.blue{
-    background-color: #1FB6FF;
+    background-color: lightskyblue;
+}
+
+button.yellow{
+    background-color: rgb(255,215,0) ;
+    width:40px;
+    height:40px;
 }
 
 button.green{
-    background-color: #13CE66;
+    background-color:rgb(0,128,0);
 }
 
 button.red{
-    background-color: #FF4949;
+    background-color: rgb(178,34,34);
+    width:40px;
+    height:40px;
 }
 
+button.grey{
+    background-color: rgb(245,245,245);
+    width:40px;
+    height:40px;
+}
+
+.btn-img #edit{
+    color: black;
+    width:30px;
+    height:30px;
+    border-radius: ;
+}
+.YellowIcon{
+    color: goldenrod;
+}
+
+.GreenIcon{
+    color:forestgreen;
+}
+
+.RedIcon{
+    color:firebrick;
+}
 
 .button:hover{
     box-shadow: inset 200px 0 0 #00000055;
 }
+
 
 @media(max-width:480px){
     .button.mobile{
