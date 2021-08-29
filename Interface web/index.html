@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/records.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/tabs.css">
+    <link rel="stylesheet" href="css/checkbox.css">
     <script src="main.js" defer></script>
     <title>CRUD</title>
 </head>
@@ -32,7 +33,7 @@
                     <th>UF</th>
                     <th>Tipo</th>
                     <th>Contato</th>
-                    <th>Status</th>
+                    <th>Ativo</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,7 +44,9 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td><div class="form-group">
+                        <input class="checkbox" id="checkbox1" type='checkbox'/>
+                      </div></td>
                     <td>
                         <button type="button" class="button green">alterar</button>
                         <button type="button" class="button blue">consultar</button>
@@ -143,6 +146,7 @@
                                 </form>
                             </div>
                         </li>
+
 
                         
                     </ul>
