@@ -12,6 +12,7 @@
 }
 
 body{
+    background-color: rgb(161, 159, 159);
     min-height: 100vh;
     display: flex;
     flex-direction: column;

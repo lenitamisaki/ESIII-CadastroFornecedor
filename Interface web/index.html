@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,200;1,800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/button.css">
     <link rel="stylesheet" href="css/records.css">
     <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/tabs.css">
     <script src="main.js" defer></script>
     <title>CRUD</title>
 </head>
+
 <body>
     <header>
         <h1 class="header-title">Cadastro de Fornecedores</h1>
@@ -28,7 +32,7 @@
                     <th>UF</th>
                     <th>Tipo</th>
                     <th>Contato</th>
-                    <th>Status</th>                           
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -78,39 +82,54 @@
         </table>
         <div class="modal" id="modal">
             <div class="modal-content">
-                <header class="modal-header">
-                    <h2>Informações Gerais</h2>
-                    <span class="modal-close" id="modalClose">&#10006;</span>
-                </header>
-                <form class="modal-form">
-                    <input type="text" class="modal-field" placeholder="Nome Fantasia">
-                    <input type="text" class="modal-field" placeholder="Razão Social">
-                    <input type="date" class="modal-field" placeholder="Data de Cadastro">
-                    <input type="text" class="modal-field" placeholder="CNPJ">
-                    <input type="text" class="modal-field" placeholder="Inscrição Estadual">
-                    <input type="text" class="modal-field" placeholder="Inscrição Municipal">
-                    <input type="text" class="modal-field" placeholder="CNAE">
-                    <input type="text" class="modal-field" placeholder="Tipo">
-                    <input type="text" class="modal-field" placeholder="Produto">
-                    <input type="text" class="modal-field" placeholder="Serviço">
-                    <input type="email" class="modal-field" placeholder="Contato">
-                </form>
-                <header class="modal-header">
-                    <h2>Endereço</h2>
-                    <span class="modal-close" ></span>
-                </header>
-                <form class="modal-form">
-                    <input type="text" class="modal-field" placeholder="Tipo Endereço">
-                    <input type="text" class="modal-field" placeholder="Tipo Logradouro">
-                    <input type="text" class="modal-field" placeholder="Logradouro">
-                    <input type="text" class="modal-field" placeholder="Numero">
-                    <input type="text" class="modal-field" placeholder="Bairro">
-                    <input type="text" class="modal-field" placeholder="Cidade">
-                    <input type="text" class="modal-field" placeholder="UF">
-                    <input type="text" class="modal-field" placeholder="País">
-                    <input type="text" class="modal-field" placeholder="CEP">
-                    <input type="text" class="modal-field" placeholder="Complemento">
-                </form>
+
+                <nav class="nav_tabs">
+                    <ul>
+                        <li>
+                            <input type="radio" id="tab1" class="rd_tab" name="tabs" checked>
+                            <span class="modal-close" id="modalClose">&#10006;</span>
+                            <label for="tab1" class="tab_label">btnn1</label>
+                            <div class="tab-content">
+                                <h1>Empresa</h1>
+                                <form class="modal-form">
+                                    <input type="text" class="modal-field" placeholder="Nome Fantasia">
+                                    <input type="text" class="modal-field" placeholder="Razão Social">
+                                    <input type="date" class="modal-field" placeholder="Data de Cadastro">
+                                    <input type="text" class="modal-field" placeholder="CNPJ">
+                                    <input type="text" class="modal-field" placeholder="Inscrição Estadual">
+                                    <input type="text" class="modal-field" placeholder="Inscrição Municipal">
+                                    <input type="text" class="modal-field" placeholder="CNAE">
+                                    <input type="text" class="modal-field" placeholder="Tipo">
+                                    <input type="text" class="modal-field" placeholder="Produto">
+                                    <input type="text" class="modal-field" placeholder="Serviço">
+                                    <input type="email" class="modal-field" placeholder="Contato">
+                                </form>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="radio" name="tabs" class="rd_tab" id="tab2">
+                            <label for="tab2" class="tab_label">btnn2</label>
+                            <div class="tab-content">
+                                <h2>Endereço</h2>
+                                <form class="modal-form">
+                                    <input type="text" class="modal-field" placeholder="Tipo Endereço">
+                                    <input type="text" class="modal-field" placeholder="Tipo Logradouro">
+                                    <input type="text" class="modal-field" placeholder="Logradouro">
+                                    <input type="text" class="modal-field" placeholder="Numero">
+                                    <input type="text" class="modal-field" placeholder="Bairro">
+                                    <input type="text" class="modal-field" placeholder="Cidade">
+                                    <input type="text" class="modal-field" placeholder="UF">
+                                    <input type="text" class="modal-field" placeholder="País">
+                                    <input type="text" class="modal-field" placeholder="CEP">
+                                    <input type="text" class="modal-field" placeholder="Complemento">
+                                </form>
+                            </div>
+                        </li>
+
+
+                        
+                    </ul>
+                </nav>
                 <footer class="modal-footer">
                     <button class="button green">Salvar</button>
                     <button class="button blue">Cancelar</button>
@@ -121,4 +140,5 @@
     <footer>
     </footer>
 </body>
+
 </html>
