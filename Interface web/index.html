@@ -103,18 +103,18 @@
                             <label for="tab1" class="tab_label">Empresa</label>
                             <div class="tab-content">
                                 <h1></h1>
-                                <form class="modal-form">
-                                    <input type="text" class="modal-field" placeholder="Nome Fantasia">
+                                <form id="form" class="modal-form">
+                                    <input id = "nome" type="text" class="modal-field" placeholder="Nome Fantasia" required>
                                     <input type="text" class="modal-field" placeholder="Razão Social">
                                     <input type="date" class="modal-field" placeholder="Data de Cadastro">
-                                    <input type="text" class="modal-field" placeholder="CNPJ">
+                                    <input id = "cnpj" type="text" class="modal-field" placeholder="CNPJ" required>
                                     <input type="text" class="modal-field" placeholder="Inscrição Estadual">
                                     <input type="text" class="modal-field" placeholder="Inscrição Municipal">
                                     <input type="text" class="modal-field" placeholder="CNAE">
-                                    <input type="text" class="modal-field" placeholder="Tipo">
+                                    <input id = "tipo" type="text" class="modal-field" placeholder="Tipo" required>
                                     <input type="text" class="modal-field" placeholder="Produto">
                                     <input type="text" class="modal-field" placeholder="Serviço">
-                                    <input type="email" class="modal-field" placeholder="Contato">
+                                    <input id = "contato" type="email" class="modal-field" placeholder="Contato" required>
                                 </form>
                             </div>
                         </li>
@@ -123,14 +123,14 @@
                             <label for="tab2" class="tab_label">Endereço</label>
                             <div class="tab-content">
                                 <h2></h2>
-                                <form class="modal-form">
+                                <form id="form2" class="modal-form">
                                     <input type="text" class="modal-field" placeholder="Tipo Endereço">
                                     <input type="text" class="modal-field" placeholder="Tipo Logradouro">
                                     <input type="text" class="modal-field" placeholder="Logradouro">
                                     <input type="text" class="modal-field" placeholder="Numero">
                                     <input type="text" class="modal-field" placeholder="Bairro">
                                     <input type="text" class="modal-field" placeholder="Cidade">
-                                    <input type="text" class="modal-field" placeholder="UF">
+                                    <input id = "uf" type="text" class="modal-field" placeholder="UF" required>
                                     <input type="text" class="modal-field" placeholder="País">
                                     <input type="text" class="modal-field" placeholder="CEP">
                                     <input type="text" class="modal-field" placeholder="Complemento">
@@ -142,7 +142,7 @@
                             <label for="tab3" class="tab_label">Contato</label>
                             <div class="tab-content">
                                 <h2></h2>
-                                <form class="modal-form">
+                                <form id="form3" class="modal-form">
                                     <input type="text" class="modal-field" placeholder="Nome">
                                     <input type="email" class="modal-field" placeholder="Email">
                                     <input type="text" class="modal-field" placeholder="Departamento">
@@ -158,8 +158,8 @@
                     </ul>
                 </nav>
                 <footer class="modal-footer">
-                    <button class="button save">Salvar</button>
-                    <button class="button cancel">Cancelar</button>
+                    <button id="salvar" class="button save">Salvar</button>
+                    <button id="cancelar" class="button cancel">Cancelar</button>
                 </footer>
             </div>
         </div>
