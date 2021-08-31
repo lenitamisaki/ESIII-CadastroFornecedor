@@ -7,50 +7,48 @@
     font-size: 1rem;
     cursor: pointer;
     transition: box-shadow .6s ease;
+    border-radius:5px;
+    min-width: var(--button-size);
 }
 
 .button.blue{
-    background-color: lightskyblue;
+    background-color:rgb(79, 144, 197);
 }
 
-button.yellow{
-    background-color: rgb(255,215,0) ;
-    width:40px;
-    height:40px;
-}
-
-button.green{
+button.save{
     background-color:rgb(0,128,0);
 }
 
-button.red{
-    background-color: rgb(178,34,34);
+button.cancel{
+    background-color: firebrick;
+}
+
+button.edit{
+    background-color: goldenrod;
     width:40px;
     height:40px;
 }
 
-button.grey{
-    background-color: rgb(245,245,245);
+button.consult{
+    background-color: forestgreen;
     width:40px;
     height:40px;
 }
 
-.btn-img #edit{
-    color: black;
-    width:30px;
-    height:30px;
-    border-radius: ;
-}
-.YellowIcon{
-    color: goldenrod;
+button.delete{
+    background-color: firebrick;
+    width:40px;
+    height:40px;
 }
 
-.GreenIcon{
-    color:forestgreen;
-}
-
-.RedIcon{
-    color:firebrick;
+.Icon{
+    position: relative;
+    top: 30%;
+    left: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%); 
+    display: block;  
+    color: #fff;
 }
 
 .button:hover{
