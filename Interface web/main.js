@@ -50,8 +50,9 @@ const saveFornecedor = () => {
         const fornecedor = {
             nome: document.getElementById('nome').value,
             cnpj: document.getElementById('cnpj').value,
+            uf: document.getElementById('uf').value,
             tipo: document.getElementById('tipo').value,
-            contato: document.getElementById('contato').value
+            email: document.getElementById('email').value
         }
         const index = document.getElementById('nome').dataset.index
         if(index =='new'){
@@ -72,8 +73,9 @@ const createRow = (fornecedor, index) => {
         <td>${index}</td>
         <td>${fornecedor.nome}</td>
         <td>${fornecedor.cnpj}</td>
+        <td>${fornecedor.uf}</td>
         <td>${fornecedor.tipo}</td>
-        <td>${fornecedor.contato}</td>
+        <td>${fornecedor.email}</td>
         <td>
             <div class="form-group">
                 <input class="checkbox" id="checkbox1" type='checkbox'/>
