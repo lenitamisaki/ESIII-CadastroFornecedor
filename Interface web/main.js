@@ -4,16 +4,8 @@ const openModal = () => document.getElementById('modal')
 const closeModal = () => {
     //clearFields()
     document.getElementById('modal').classList.remove('active')
-    
-}
 
-const tempFornecedor = {
-    id: "123",
-    nomeFantasia: "Tesla",
-    CNPJ: "123-321",
-    uf: "SP"
 }
-
 
 const getLocalStorage = () => JSON.parse(localStorage.getItem('db_fornecedor')) ?? []
 const setLocalStorage = (dbFornecedor) => localStorage.setItem("db_fornecedor", JSON.stringify(dbFornecedor))
@@ -61,11 +53,80 @@ const saveFornecedor = () => {
             tipo: document.getElementById('tipo').value,
             contato: document.getElementById('contato').value
         }
-        createFornecedor(fornecedor)
-        clearFields()
-        closeModal()
+        const index = document.getElementById('nome').dataset.index
+        if(index =='new'){
+            createFornecedor(fornecedor)
+            clearFields()
+            closeModal()
+        }else{
+            updateFornecedor(index, fornecedor)
+            updateTable()
+            closeModal()
+        }
     }
 }
+
+const createRow = (fornecedor, index) => {
+    const newRow = document.createElement('tr')
+    newRow.innerHTML = `
+        <td>${index}</td>
+        <td>${fornecedor.nome}</td>
+        <td>${fornecedor.cnpj}</td>
+        <td>${fornecedor.tipo}</td>
+        <td>${fornecedor.contato}</td>
+        <td>
+            <div class="form-group">
+                <input class="checkbox" id="checkbox1" type='checkbox'/>
+            </div>
+        </td>
+        <td>
+            <button type="button" class="button edit"><span class="material-icons Icon" id="edit-${index}">edit</span></button>
+            <button type="button" class="button consult"><span class="material-icons Icon" id="consult-${index}">description</span></button>
+            <button type="button" class="button delete"><span class="material-icons Icon" id="delete-${index}">delete</span></button>
+        </td>
+        `
+    document.querySelector('#tableFornecedor>tbody').appendChild(newRow)
+}
+
+const updateTable = () => {
+    const dbFornecedor = readFornecedor()
+    clearTable()
+    dbFornecedor.forEach(createRow)
+}
+
+
+const clearTable = () => {
+    const rows = document.querySelectorAll('#tableFornecedor>tbody tr')
+    rows.forEach(row => row.parentNode.removeChild(row))
+}
+
+
+const fillFields = (fornecedor) => {
+    document.getElementById('nome').value = fornecedor.nome
+    document.getElementById('cnpj').value = forncedor.cnpj
+    document.getElementById('tipo').value = fornecedor.tipo
+    document.getElementById('contato').value = fornecedor.contato
+    document.getElementById('nome').dataset.index = fornecedor.index
+}
+
+const editFornecedor = (index) => {
+    const fornecedor = readFornecedor()[index]
+    fornecedor.index = index
+    fillFields(fornecedor)
+    openModal()
+}
+
+const edit = (event) => {
+    const openModal = () => document.getElementById('modal')
+    .classList.add('active')
+
+    if (event.target.class == 'button edit'){ 
+        const [action, index] = event.target.id.split('-')
+        editFornecedor(index)
+    }
+}
+
+updateTable()
 
 //Eventos
 document.getElementById('cadastrarFornecedor')
@@ -77,4 +138,8 @@ document.getElementById('modalClose')
 document.getElementById('salvar')
     .addEventListener('click', saveFornecedor)
 
+document.querySelector('#tableFornecedor>tbody')
+    .addEventListener('click', edit)
 
+document.getElementById('cancelar')
+    .addEventListener('click', closeModal)

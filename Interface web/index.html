@@ -24,7 +24,7 @@
     </header>
     <main>
         <button type="button" class="button blue mobile" id="cadastrarFornecedor">Cadastrar Fornecedor</button>
-        <table class="records">
+        <table id = "tableFornecedor" class="records">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -104,17 +104,17 @@
                             <div class="tab-content">
                                 <h1></h1>
                                 <form id="form" class="modal-form">
-                                    <input id = "nome" type="text" class="modal-field" placeholder="Nome Fantasia" required>
-                                    <input type="text" class="modal-field" placeholder="Razão Social">
-                                    <input type="date" class="modal-field" placeholder="Data de Cadastro">
+                                    <input id = "nome" type="text" data-index= "new" class="modal-field" placeholder="Nome Fantasia" required>
+                                    <input id = "rs" type="text" class="modal-field" placeholder="Razão Social">
+                                    <input id = "dt_contato" type="date" class="modal-field" placeholder="Data de Cadastro">
                                     <input id = "cnpj" type="text" class="modal-field" placeholder="CNPJ" required>
-                                    <input type="text" class="modal-field" placeholder="Inscrição Estadual">
-                                    <input type="text" class="modal-field" placeholder="Inscrição Municipal">
-                                    <input type="text" class="modal-field" placeholder="CNAE">
+                                    <input id = "insc_est" type="text" class="modal-field" placeholder="Inscrição Estadual">
+                                    <input id = "insc_munic" type="text" class="modal-field" placeholder="Inscrição Municipal">
+                                    <input id ="cnae" type="text" class="modal-field" placeholder="CNAE">
                                     <input id = "tipo" type="text" class="modal-field" placeholder="Tipo" required>
-                                    <input type="text" class="modal-field" placeholder="Produto">
-                                    <input type="text" class="modal-field" placeholder="Serviço">
-                                    <input id = "contato" type="email" class="modal-field" placeholder="Contato" required>
+                                    <input id = "produto" type="text" class="modal-field" placeholder="Produto">
+                                    <input id = "servico" type="text" class="modal-field" placeholder="Serviço">
+                                    
                                 </form>
                             </div>
                         </li>
