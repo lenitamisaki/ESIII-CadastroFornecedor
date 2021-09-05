@@ -61,10 +61,10 @@ const saveFornecedor = () => {
             closeModal()
         }else{
             updateFornecedor(index, fornecedor)
-            updateTable()
             closeModal()
         }
     }
+    updateTable()
 }
 
 const createRow = (fornecedor, index) => {
@@ -127,8 +127,6 @@ const edit = (event) => {
         editFornecedor(index)
     }
 }
-
-updateTable()
 
 //Eventos
 document.getElementById('cadastrarFornecedor')
