@@ -6,15 +6,25 @@
 
 :root{
     --primary-color: #3f3f3e;
-    --secundary-color: #FFF1CC;
-    --shadow-color: #CCC;
-    --text-color: #FFF;
+    --secundary-color:powderblue ;
+    --background-color:#F5F5F5;
+    --shadow-color:#00000055;
+    --boxshadow-color: black;
+    --text-color: ghostwhite;
+    --icon-color:ghostwhite;
+    --buttonblue-color: rgb(79, 144, 197);
+    --buttongreen-color: rgb(0,128,0);
+    --buttonred-color: firebrick;
+    --buttonyellow-color: goldenrod;
+    --tab-color: rgb(61, 108, 146);
+    --tabchecked-color: rgb(79, 144, 197);
+    --checkbox-color: darkturquoise;
 }
 
 
 
 body{
-    background-color: rgb(245,245,245);
+    background-color: var(--background-color);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -31,7 +41,7 @@ header{
 }
 
 .header-title{
-    color: rgb(255, 255, 255);
+    color: var(--text-color);
     font-size: 2rem;
 }
 

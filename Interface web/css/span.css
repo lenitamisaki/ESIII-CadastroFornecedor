@@ -1,0 +1,25 @@
+span{
+    color: var(--icon-color);
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+}
+
+.edit{
+    background-color: var(--buttonyellow-color);
+    padding: 8px;
+}
+
+.consult{
+    background-color: var(--buttongreen-color);
+    padding: 8px;
+}
+
+.delete{
+    background-color: var(--buttonred-color);
+    padding: 8px;
+}
+
+span:hover{
+    box-shadow: inset 40px 0 0 var(--shadow-color);
+}

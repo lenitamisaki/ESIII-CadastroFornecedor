@@ -55,11 +55,11 @@ const saveFornecedor = () => {
             email: document.getElementById('email').value
         }
         const index = document.getElementById('nome').dataset.index
-        if(index =='new'){
+        if (index == 'new') {
             createFornecedor(fornecedor)
             clearFields()
             closeModal()
-        }else{
+        } else {
             updateFornecedor(index, fornecedor)
             closeModal()
         }
@@ -82,10 +82,10 @@ const createRow = (fornecedor, index) => {
             </div>
         </td>
         <td>
-            <button type="button" class="button edit"><span class="material-icons Icon" id="edit-${index}">edit</span></button>
-            <button type="button" class="button consult"><span class="material-icons Icon" id="consult-${index}">description</span></button>
-            <button type="button" class="button delete"><span class="material-icons Icon" id="delete-${index}">delete</span></button>
-        </td>
+            <span class="edit material-icons" id="edit" data-index="${index}">edit</span>
+            <span class="consult material-icons" id="consult">description</span>
+            <span class="delete material-icons" id="delete">delete</span>
+         </td>
         `
     document.querySelector('#tableFornecedor>tbody').appendChild(newRow)
 }
@@ -105,27 +105,23 @@ const clearTable = () => {
 
 const fillFields = (fornecedor) => {
     document.getElementById('nome').value = fornecedor.nome
-    document.getElementById('cnpj').value = forncedor.cnpj
+    document.getElementById('cnpj').value = fornecedor.cnpj
+    document.getElementById('uf').value = fornecedor.uf
     document.getElementById('tipo').value = fornecedor.tipo
-    document.getElementById('contato').value = fornecedor.contato
+    document.getElementById('email').value = fornecedor.email
     document.getElementById('nome').dataset.index = fornecedor.index
 }
 
-const editFornecedor = (index) => {
-    const fornecedor = readFornecedor()[index]
-    fornecedor.index = index
-    fillFields(fornecedor)
-    openModal()
-}
-
 const edit = (event) => {
-    const openModal = () => document.getElementById('modal')
-    .classList.add('active')
-
-    if (event.target.class == 'button edit'){ 
-        const [action, index] = event.target.id.split('-')
-        editFornecedor(index)
-    }
+    if (event.target.id == 'edit')
+        console.log(event.target.id)
+        const index = event.target.dataset.index
+        console.log(index)
+        const fornecedor = readFornecedor()[index]
+        console.log(fornecedor)
+        fornecedor.index = index
+        fillFields(fornecedor)
+        openModal() 
 }
 
 //Eventos
@@ -138,8 +134,12 @@ document.getElementById('modalClose')
 document.getElementById('salvar')
     .addEventListener('click', saveFornecedor)
 
+document.getElementById('cancelar')
+    .addEventListener('click', closeModal)
+
 document.querySelector('#tableFornecedor>tbody')
     .addEventListener('click', edit)
 
-document.getElementById('cancelar')
-    .addEventListener('click', closeModal)
+document.querySelector('#tableFornecedor>tbody')
+    .addEventListener('click', consult)
+
