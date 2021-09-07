@@ -4,7 +4,7 @@ const openModal = () => document.getElementById('modal')
 const closeModal = () => {
     //clearFields()
     document.getElementById('modal').classList.remove('active')
-
+    enable()
 }
 
 const getLocalStorage = () => JSON.parse(localStorage.getItem('db_fornecedor')) ?? []
@@ -83,8 +83,8 @@ const createRow = (fornecedor, index) => {
         </td>
         <td>
             <span class="edit material-icons" id="edit" data-index="${index}">edit</span>
-            <span class="consult material-icons" id="consult">description</span>
-            <span class="delete material-icons" id="delete">delete</span>
+            <span class="consult material-icons" id="consult" data-index="${index}">description</span>
+            <span class="delete material-icons" id="delete" data-index="${index}">delete</span>
          </td>
         `
     document.querySelector('#tableFornecedor>tbody').appendChild(newRow)
@@ -112,16 +112,43 @@ const fillFields = (fornecedor) => {
     document.getElementById('nome').dataset.index = fornecedor.index
 }
 
+const disable = () => {
+    const saveButton = document.getElementById("salvar")
+    const cancelButton = document.getElementById("cancelar")
+        saveButton.hidden = true;
+        cancelButton.hidden = true;
+}
+
+const enable = () => {
+    const saveButton = document.getElementById("salvar")
+    const cancelButton = document.getElementById("cancelar")
+        saveButton.hidden = false;
+        cancelButton.hidden = false;
+}
+
 const edit = (event) => {
-    if (event.target.id == 'edit')
+    if (event.target.id == 'edit'){
         console.log(event.target.id)
         const index = event.target.dataset.index
         console.log(index)
         const fornecedor = readFornecedor()[index]
         console.log(fornecedor)
         fornecedor.index = index
-        fillFields(fornecedor)
+        fillFields(fornecedor)  
         openModal() 
+    }
+    else if (event.target.id == "consult"){
+        console.log(event.target.id)
+        const index = event.target.dataset.index
+        console.log(index)
+        const fornecedor = readFornecedor()[index]
+        console.log(fornecedor)
+        fornecedor.index = index
+        fillFields(fornecedor)  
+        openModal() 
+        disable()
+    }
+
 }
 
 //Eventos
@@ -139,7 +166,3 @@ document.getElementById('cancelar')
 
 document.querySelector('#tableFornecedor>tbody')
     .addEventListener('click', edit)
-
-document.querySelector('#tableFornecedor>tbody')
-    .addEventListener('click', consult)
-
