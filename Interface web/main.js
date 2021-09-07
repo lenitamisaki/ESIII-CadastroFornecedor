@@ -4,7 +4,7 @@ const openModal = () => document.getElementById('modal')
 const closeModal = () => {
     //clearFields()
     document.getElementById('modal').classList.remove('active')
-    enable()
+    enableButtons()
 }
 
 const getLocalStorage = () => JSON.parse(localStorage.getItem('db_fornecedor')) ?? []
@@ -62,7 +62,7 @@ const saveFornecedor = () => {
         } else {
             updateFornecedor(index, fornecedor)
             closeModal()
-        }
+        } 
     }
     updateTable()
 }
@@ -112,21 +112,21 @@ const fillFields = (fornecedor) => {
     document.getElementById('nome').dataset.index = fornecedor.index
 }
 
-const disable = () => {
+const disableButtons = () => {
     const saveButton = document.getElementById("salvar")
     const cancelButton = document.getElementById("cancelar")
         saveButton.hidden = true;
         cancelButton.hidden = true;
 }
 
-const enable = () => {
+const enableButtons = () => {
     const saveButton = document.getElementById("salvar")
     const cancelButton = document.getElementById("cancelar")
         saveButton.hidden = false;
         cancelButton.hidden = false;
 }
 
-const edit = (event) => {
+const editConsultDelete = (event) => {
     if (event.target.id == 'edit'){
         console.log(event.target.id)
         const index = event.target.dataset.index
@@ -146,7 +146,16 @@ const edit = (event) => {
         fornecedor.index = index
         fillFields(fornecedor)  
         openModal() 
-        disable()
+        disableButtons()
+    }
+    else if (event.target.id == "delete"){
+            const index = event.target.dataset.index
+            const fornecedor = readFornecedor()[index]
+            const response = confirm(`Deseja realmente excluir o cliente ${fornecedor.nome}`)
+            if (response) {
+                deleteFornecedor(index)
+                updateTable()
+            }
     }
 
 }
@@ -165,4 +174,4 @@ document.getElementById('cancelar')
     .addEventListener('click', closeModal)
 
 document.querySelector('#tableFornecedor>tbody')
-    .addEventListener('click', edit)
+    .addEventListener('click', editConsultDelete)
