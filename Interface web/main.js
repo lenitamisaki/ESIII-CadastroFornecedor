@@ -172,15 +172,19 @@ const fillFields = (fornecedor) => {
 const disableButtons = () => {
     const saveButton = document.getElementById("salvar")
     const cancelButton = document.getElementById("cancelar")
+    const adicionarContatoButton = document.getElementById("adicionarContato")
         saveButton.hidden = true;
         cancelButton.hidden = true;
+        adicionarContatoButton.hidden = true;
 }
 
 const enableButtons = () => {
     const saveButton = document.getElementById("salvar")
     const cancelButton = document.getElementById("cancelar")
+    const adicionarContatoButton = document.getElementById("adicionarContato")
         saveButton.hidden = false;
         cancelButton.hidden = false;
+        adicionarContatoButton.hidden = false;
 }
 
 const editConsultDelete = (event) => {
@@ -204,6 +208,39 @@ const editConsultDelete = (event) => {
         fillFields(fornecedor)  
         openModal() 
         disableButtons()
+        document.getElementById('nome_fantasia').disabled = true;
+        document.getElementById('razao_social').disabled = true;
+        document.getElementById('data_cadastro').disabled = true;
+        document.getElementById('cnpj').disabled = true;
+        document.getElementById('inscricao_estadual').disabled = true;
+        document.getElementById('inscricao_municipal').disabled = true;
+        document.getElementById('cnae').disabled = true;
+        document.getElementById('tipo_fornecedor').disabled = true;
+        document.getElementById('produto').disabled = true;
+        document.getElementById('servico').disabled = true;
+    
+        document.getElementById('tipo_endereco').disabled = true;
+        document.getElementById('tipo_logradouro').disabled = true;
+        document.getElementById('logradouro').disabled = true;
+        document.getElementById('numero_endereco').disabled = true;
+        document.getElementById('bairro').disabled = true;
+        document.getElementById('cidade').disabled = true;
+        document.getElementById('uf').disabled = true;
+        document.getElementById('pais').disabled = true;
+        document.getElementById('cep').disabled = true;
+        document.getElementById('complemento').disabled = true;
+    
+        document.getElementById('nome_contato').disabled = true;
+        document.getElementById('email_contato').disabled = true;
+        document.getElementById('departamento_contato').disabled = true;
+        document.getElementById('email_contato').disabled = true;
+        document.getElementById('ddd_contato').disabled = true;
+        document.getElementById('ddi_contato').disabled = true;
+        document.getElementById('telefone_contato').disabled = true;
+        document.getElementById('ramal_contato').disabled = true;
+        document.getElementById('codigo_contato').disabled = true;
+        document.getElementById('descricao_contato').disabled = true
+
     }
     else if (event.target.id == "delete"){
         const index = event.target.dataset.index

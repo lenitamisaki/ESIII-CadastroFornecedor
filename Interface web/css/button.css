@@ -22,6 +22,11 @@
     background-color:var(--buttonred-color);
 }
 
+.addContato{
+    background-color:var(--buttonblue-color);
+    border-radius: 20px;
+}
+
 .button:hover{
     box-shadow: inset 200px 0 0 var(--shadow-color);
 }
