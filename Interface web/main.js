@@ -81,15 +81,17 @@ const saveFornecedor = () => {
             codigo_contato: document.getElementById('codigo_contato').value,
             descricao_contato: document.getElementById('descricao_contato').value
         }
+
         const index = document.getElementById('nome_fantasia').dataset.index
         if (index == 'new') {
             createFornecedor(fornecedor)
+            createRow(fornecedor, index)
             clearFields()
             closeModal()
         } else {
             updateFornecedor(index, fornecedor)
             closeModal()
-        }
+        } 
     }
     updateTable()
 }
@@ -232,3 +234,4 @@ document.getElementById('cancelar')
 
 document.querySelector('#tableFornecedor>tbody')
     .addEventListener('click', editConsultDelete)
+
